@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 1391168525}
   - component: {fileID: 1391168524}
   - component: {fileID: 1391168523}
+  - component: {fileID: 1391168527}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -398,3 +399,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1391168527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391168522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0805eb3d4fc7054198bcfc15e292dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xBorders: 8.5
+  yBorders: 3.5
+  moveSpeed: 10
+  laserBeam: {fileID: 827726758989942116, guid: 06fb34dd17d17d74ab096f351c6ab8fb, type: 3}
+  shootingDelay: 0.2
