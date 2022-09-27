@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float xBorders;
-    [SerializeField] private float yBorders;
+    [SerializeField] public float xBorders;
+    [SerializeField] public float yBorders;
     
     [SerializeField] private float moveSpeed = 1;
 
     [SerializeField] private GameObject laserBeam;
+    [SerializeField] private Transform laserGun;
     [SerializeField] private float shootingDelay = 0.2f;
 
     Vector3 transition;
@@ -45,13 +46,22 @@ public class Player : MonoBehaviour
 
         transform.Translate(direction * Time.deltaTime * moveSpeed);
     }
-
+    private bool isFiring = false;
     private void ShootLaser()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        
+
+        if(Input.GetKeyDown(KeyCode.Space) && !isFiring)
         {
-            Instantiate(laserBeam, transform.position, Quaternion.identity);
+            isFiring = true;
+            Invoke("Fire", shootingDelay);
         }
-       
+
+    }
+
+    private void Fire()
+    {
+        Instantiate(laserBeam, laserGun.position, Quaternion.identity);
+        isFiring = false;
     }
 }
